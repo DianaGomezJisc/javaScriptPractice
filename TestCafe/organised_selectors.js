@@ -12,16 +12,23 @@ const buttonSelector = Selector("button[type='submit']");
 
 test.meta('env','production').page("https://www.prospects.ac.uk/graduate-jobs")("search criteria", async t => {
 
-    await t.click(jobsAndWorkExperience);
-    await t.click(searchGraduateJobs);
+    await t.pressKey(jobsAndWorkExperience)
+           .click(searchGraduateJobs)
 
     const sectorsToSelect = ['law', 'sales'];
     await checkSectorsBySectorName(sectorsToSelect);
 
     await clickButton();
 
-    const content =  Selector(h2Selector);
+    const content =  Selector("#results h2 span");
     await t.expect(content.withText("There are ").exists).ok();
+
+    /* you can do an assertions to see if the selectors text content contains a specific text so it wont do an exact match
+
+    await t.expect(yourSelector.textContent).contains("expected text");
+    await t.expect(yourSelector.textContent).eql("expected text");
+
+*/
 });
 
 async function checkSectorsBySectorName(sectorsToSelect) {

@@ -7,7 +7,6 @@ class JobSearchPagePage extends BasePage {
      */
     constructor(page) {
         super(page);
-
         //selectors
         this.jobAndWorkExperienceMenu = 'a:has-text("Jobs and work experience")';
         this.graduateJobsOption = 'a:has-text("Search graduate jobs")';

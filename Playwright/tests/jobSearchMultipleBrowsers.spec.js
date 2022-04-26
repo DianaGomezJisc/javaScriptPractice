@@ -1,6 +1,7 @@
 /** Instructions:
  * To run all the tests in tests folder use npx playwright test
  * To run a single test go to JS-basico\Playwright\tests run: npx playwright test tests/jobSearchMultipleBrowsers.spec.js
+ * To open the last report: npx playwright show-report my-report
  */
 
 const { test, expect} = require('@playwright/test');
@@ -30,7 +31,7 @@ test.describe('A traditional test', () => {
 
         await checkSalary(page,"All");
 
-        await page.type("#keyword", "Maths");
+        await page.fill("#keyword", "Maths");
 
         await clickButton(page);
 
@@ -82,7 +83,8 @@ test.describe('A traditional test', () => {
 
 
     async function clickButton(page) {
-        await page.click("button[type='submit']", {delay: 50});
+        await page.keyboard.press("Search jobs");
+        //await page.click("button[type='submit']", {delay: 50}); //another way using css
     }
 
 

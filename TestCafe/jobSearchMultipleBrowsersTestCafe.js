@@ -31,7 +31,7 @@
  Await => makes JS wait until promises settles and then go on with the results. TestCafe handles js waits with await.
           The wait doesnt cost any CPU resources, because the engine can do other jobs in the meantime: execute other scripts, handle events, etc.
 
- RUN different browsers:
+ RUN different browsers: firefox,chrome,edge  it doesn't run on safari
  testcafe firefox,chrome,edge jobSearchMultipleBrowsersTestCafe.js
  */
 
@@ -61,8 +61,10 @@ test("search criteria", async t => { //t will control the browser and exposes th
 
         await clickButton();
 
-        const content =  Selector('#results h2 span');
-        await t.expect(content.withText("There is 1 matching job").exists).ok();
+        const content =  Selector('.result-no-matches');
+        await t.expect(content.textContent).contains("No more");
+        await t.expect(content.textContent).eql("No more matching jobs");
+        //await t.expect(content.withText("No more matching jobs").exist).ok(); doesn't work
 });
 
 async function checkSectorsBySectorName(sectorsToSelect) {
@@ -101,7 +103,7 @@ async function clickButton() {
     await t.click("button[type='submit']");
 }
 
-/** TOOK 9 sec to run
+/** TOOK 23 sec to run on the 3 browsers
  *  It has a good log output info of Chrome version and OS
  *  Runs on: chrome, firefox, edge, opera and apparently safari
  *  This test failed on firefox and opera
