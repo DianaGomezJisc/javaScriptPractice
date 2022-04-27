@@ -22,15 +22,15 @@ PLAYWRIGHT (2015)
 5- Supports java, javascript, c# and python and has an alternative assertion libraries
 6- Built in waiting mechanism
 7- Playwright can intercept network activity to modify or mock, network requests during test scenarios.
-8- Uses desktop browsers to emulate mobile devices only.
-9- Playwright leverages the DevTools protocol to write powerful, stable automated tests.
-10- Supports parallel execution and cross browser testing
-11- Test Runner Frameworks Supported: Mocha, Jest, Jasmine
+8- Playwright leverages the DevTools protocol to write powerful, stable automated tests.
+9- Supports parallel execution and cross browser testing
+10- Test Runner Frameworks Supported: Mocha, Jest, Jasmine
 
 Cons:
 1- Community is not very big
-
-
+2- Doesn't support IE
+3- Safari support means there is Webkit support which is used inside Safari, but it doesn’t mean a 100% match, due to specific Safari features.
+4- Uses desktop browsers to emulate mobile devices only.
 
 TESTCAFE (2013)
 
