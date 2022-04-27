@@ -2,6 +2,8 @@
  * To run all the tests in tests folder use npx playwright test
  * To run a single test go to JS-basico\Playwright\tests run: npx playwright test tests/jobSearchMultipleBrowsers.spec.js
  * To open the last report: npx playwright show-report my-report
+ * It needs playwright.config.js to configure the browsers we want to use. In this example we are running the tests on all available browsers
+ * For more infor go to: https://github.com/microsoft/playwright
  */
 
 const { test, expect} = require('@playwright/test');
