@@ -3,11 +3,13 @@
 Automation testing tools for e2e tests (functional testing), some considerations:
 
 ** TestCafe: based on node.js (run js on the server), it is an end-to-end solution for testing web apps. 
+
 ** Playwright: created by Microsoft, is an open source cross-browser automation framework for end-to-end testing.
 They both run tests within a browser, rather than executing tests remotely like Selenium does. It is easy to install, configure and get started.
 Can run your tests on any browser without having to download separate drivers for each browser
 
 ** Cypress: more widely used within JS community. Limitations around testing iFrames and multiple tabs. Built in waits. Running tests in parallel requires configuration effort.
+
 ** Selenium: preferred within Java/C#/Ruby developers. Can be used with multiple programming languages: Java, Python, Ruby, C#, JavaScript, Perl and PHP. It requires more effort for the setup. Tests could be a bit flaky if wait methods are not used properly. Cross browse testing and parallel execution available  
 
 
